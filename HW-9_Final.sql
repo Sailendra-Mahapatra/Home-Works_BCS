@@ -24,7 +24,7 @@ SELECT actor_id, first_name, last_name FROM actor WHERE last_name LIKE '%GEN%';
 
 -- 2c. Find all actors whose last names contain the letters LI. This time, order the rows by last name and first name, in that order:
 
-SELECT actor_id, first_name, last_name FROM actor WHERE last_name LIKE '%LI%'
+SELECT actor_id, last_name, first_name FROM actor WHERE last_name LIKE '%LI%'
 ORDER BY last_name, first_name;
 
 -- 2d. Using IN, display the country_id and country columns of the following countries: Afghanistan, Bangladesh, and China:
@@ -43,12 +43,14 @@ ADD COLUMN description BLOB;
 -- Checking the description data type
 
 UPDATE actor SET description = 99999 WHERE last_name ='WILLIAMS';
+
 SELECT * FROM actor WHERE last_name ='WILLIAMS';
                      
 
 -- 3b. Very quickly you realize that entering descriptions for each actor is too much effort. Delete the description column.
 
 ALTER TABLE actor DROP COLUMN description;
+
 SELECT * FROM actor;
 
                      
@@ -68,6 +70,7 @@ HAVING COUNT(actor_id) >1;
 
 UPDATE actor SET first_name = 'HARPO' 
 WHERE first_name = 'GROUCHO' AND last_name = 'WILLIAMS';
+
 SELECT * FROM actor WHERE first_name = 'HARPO' AND last_name = 'WILLIAMS';
 
 -- 4d. Perhaps we were too hasty in changing GROUCHO to HARPO. It turns out that GROUCHO was the correct name after all! In a single query, 
@@ -75,6 +78,7 @@ SELECT * FROM actor WHERE first_name = 'HARPO' AND last_name = 'WILLIAMS';
 
 UPDATE actor SET first_name = 'GROUCHO' 
 WHERE first_name = 'HARPO' AND last_name = 'WILLIAMS';
+
 SELECT * FROM actor WHERE first_name = 'GROUCHO' AND last_name = 'WILLIAMS';
                      
 
@@ -82,6 +86,7 @@ SELECT * FROM actor WHERE first_name = 'GROUCHO' AND last_name = 'WILLIAMS';
 --     Hint: https://dev.mysql.com/doc/refman/5.7/en/show-create-table.html
 
 SHOW CREATE TABLE address;
+
 DESCRIBE address;
                      
 
