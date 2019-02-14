@@ -51,8 +51,8 @@ def avail_routes():
         f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/station<br/>"
         f"/api/v1.0/temperature observed (tobs)<br/>"
-        f"/api/v1.0/start (YYYY-MM-DD)<br/>"
-        f"/api/v1.0/start date/end date (YYYY-MM-DD/YYYY-MM-DD)<br/>"
+        f"/api/v1.0/Place start date in format (YYYY-MM-DD)<br/>"
+        f"/api/v1.0/Place start date/end date in format (YYYY-MM-DD/YYYY-MM-DD)<br/>"
 
     )
     # Convert the query results to a Dictionary using `date` as the key and `prcp` as the value.
